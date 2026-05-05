@@ -18,7 +18,7 @@ bot.command("poll", ctx =>
 	}),
 );
 bot.command("quiz", ctx =>
-	ctx.replyWithQuiz("2b|!2b", ["True", "False"], { correct_option_id: 0 }),
+	ctx.replyWithQuiz("2b|!2b", ["True", "False"], { correct_option_ids: [0] }),
 );
 
 bot.launch();

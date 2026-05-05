@@ -6,7 +6,9 @@ const app = fastify();
 
 const webhook = await bot.createWebhook({ domain: webhookDomain });
 
-app.post(`/telegraf/${bot.secretPathComponent()}`, webhook);
+app.post(`/telegraf/${bot.secretPathComponent()}`, (request, reply) =>
+	webhook(request.raw, reply.raw),
+);
 
 bot.on("text", ctx => ctx.reply("Hello"));
 

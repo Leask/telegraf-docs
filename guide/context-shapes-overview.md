@@ -43,9 +43,9 @@ __Telegraf passes every request to your middlewares as a `ctx` object, and each 
         apiRoot: 'https://api.telegram.org',
         apiMode: 'bot',
         webhookReply: boolean,
-        agent: [Agent],
-        attachmentAgent: undefined /* differs based on the configuration */,
-        testEnv: boolean
+        testEnv: boolean,
+        fetch: [Function],
+        requestTimeout: number
       }
     },
     botInfo: {

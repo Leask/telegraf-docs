@@ -1,6 +1,6 @@
 import { Telegraf } from "telegraf";
 import Koa from "koa";
-import koaBody from "koa-body";
+import { koaBody } from "koa-body";
 
 const bot = new Telegraf(token);
 const app = new Koa();

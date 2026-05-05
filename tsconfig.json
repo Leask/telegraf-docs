@@ -2,8 +2,11 @@
 	"compilerOptions": {
 		"strict": true,
 		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
 		"target": "es2021",
-		"outDir": "./dist-examples"
+		"allowImportingTsExtensions": true,
+		"noEmit": true,
+		"skipLibCheck": true
 	},
 	"include": ["./global.d.ts", "./examples"],
 	"exclude": ["./examples/functions", "examples/mini-apps/serve"]

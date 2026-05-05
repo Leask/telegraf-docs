@@ -16,7 +16,9 @@ const bot = new Telegraf(process.env.BOT_TOKEN);
 const download = async (fromFileId: string, toPath: string) => {
 	const link = await bot.telegram.getFileLink(fromFileId);
 	const res = await fetch(link.toString());
-	await res.body!.pipeTo(Writable.toWeb(createWriteStream(toPath)));
+	await res.body!.pipeTo(
+		Writable.toWeb(createWriteStream(toPath)) as WritableStream<Uint8Array>,
+	);
 };
 
 // handler that downloads all photos the bot sees to a photos

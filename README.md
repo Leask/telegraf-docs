@@ -44,3 +44,9 @@ PORT=3000
 WEBHOOK_DOMAIN=bot.example.com
 BOT_TOKEN=123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11
 ```
+
+### Runtime networking and proxies
+
+Telegraf v6 uses the Node.js native `globalThis.fetch` implementation by default. It no longer exposes the old `telegram.agent` or `telegram.attachmentAgent` options.
+
+If your bot needs a proxy, custom TLS handling, custom compression, or another non-standard network path, install the fetch and agent packages you need and inject that behavior with `telegram.fetch`. The custom fetch is used for both Bot API calls and URL attachments. See [`examples/proxy-bot.ts`](./examples/proxy-bot.ts) for a proxy example.
