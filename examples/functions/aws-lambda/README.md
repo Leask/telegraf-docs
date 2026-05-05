@@ -2,6 +2,8 @@
 
 This template demonstrates how to run a simple Telegraf echo bot with on AWS Lambda and API Gateway using the Serverless Framework.
 
+Telegraf v6 requires Node.js 20 or newer, so the Serverless example uses the AWS Lambda `nodejs20.x` runtime.
+
 ## Usage
 
 After installing dependencies (using `npm install` or the similar), the following commands are available:
