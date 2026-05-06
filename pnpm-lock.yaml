@@ -24,7 +24,7 @@ dependencies:
     specifier: ^3.3.2
     version: 3.3.2
   telegraf:
-    specifier: github:Leask/telegraf#bot-api-9.6-sync
+    specifier: git+https://github.com/Leask/telegraf.git#bot-api-9.6-sync
     version: github.com/Leask/telegraf/07a9ef325efb1a53fb196de80ce8b817c1149b1e
 
 devDependencies:
@@ -1216,6 +1216,7 @@ packages:
     version: 6.0.0
     engines: {node: '>=20'}
     hasBin: true
+    prepare: true
     requiresBuild: true
     dependencies:
       '@telegraf/types': github.com/Leask/types/012947771d009d7ab1233dd96d95683d74471cf5

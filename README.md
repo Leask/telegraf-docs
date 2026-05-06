@@ -4,6 +4,17 @@ This repo will house the future of Telegraf's documentation. For now, it houses 
 
 ### [![New](https://img.shields.io/badge/new%20✨-8A2BE2?style=flat-square) Build Telegram Mini Apps with Telegraf](./examples/mini-apps/README.md)
 
+## Development
+
+Use pnpm for the repo-level examples and typecheck:
+
+```shell
+npx --yes pnpm@8.15.9 install --frozen-lockfile
+npx --yes pnpm@8.15.9 build
+```
+
+Standalone deployment templates may use their platform's package manager. For example, the AWS Lambda example keeps its own npm lockfile.
+
 ## How to use these examples:
 
 In the interest of brevity, the examples in the repo don't explain certain good-to-haves.

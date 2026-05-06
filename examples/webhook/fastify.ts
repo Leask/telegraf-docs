@@ -1,14 +1,17 @@
 import { fastify } from "fastify";
 import { Telegraf } from "telegraf";
+import type { Update } from "telegraf/types";
 
 const bot = new Telegraf(token);
 const app = fastify();
 
-const webhook = await bot.createWebhook({ domain: webhookDomain });
+const webhookPath = `/telegraf/${bot.secretPathComponent()}`;
+await bot.createWebhook({ domain: webhookDomain, path: webhookPath });
 
-app.post(`/telegraf/${bot.secretPathComponent()}`, (request, reply) =>
-	webhook(request.raw, reply.raw),
-);
+app.post(webhookPath, async (request, reply) => {
+	await bot.handleUpdate(request.body as Update);
+	return reply.code(200).send();
+});
 
 bot.on("text", ctx => ctx.reply("Hello"));
 
