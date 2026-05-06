@@ -18,7 +18,7 @@
 		"koa": "^2.14.1",
 		"koa-body": "^6.0.1",
 		"node-fetch": "^3.3.2",
-		"telegraf": "npm:@leask/telegraf@6.0.0"
+		"telegraf": "npm:@leask/telegraf@6.0.1"
 	},
 	"devDependencies": {
 		"@types/express": "^4.17.17",

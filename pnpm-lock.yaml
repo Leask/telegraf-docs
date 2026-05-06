@@ -24,8 +24,8 @@ dependencies:
     specifier: ^3.3.2
     version: 3.3.2
   telegraf:
-    specifier: npm:@leask/telegraf@6.0.0
-    version: /@leask/telegraf@6.0.0
+    specifier: npm:@leask/telegraf@6.0.1
+    version: /@leask/telegraf@6.0.1
 
 devDependencies:
   '@types/express':
@@ -65,8 +65,8 @@ packages:
       fast-json-stringify: 5.8.0
     dev: false
 
-  /@leask/telegraf@6.0.0:
-    resolution: {integrity: sha512-3scLSWBf1rJsEvBNvpSI0JfVLZfHzEDEFu8L4g/oRt8XCTiasf/4Bgi0C32+JbOV8Akdk5oe/xufAFG+fviqtw==}
+  /@leask/telegraf@6.0.1:
+    resolution: {integrity: sha512-loLp4S/FbfRxzpw6leVJZwJUm06af2PXpMaV0+oJkCFuMlU2+h4jRlnmLIDsVJy2FO16E9IKqGl8DTXJfQDpkQ==}
     engines: {node: '>=20'}
     hasBin: true
     dependencies:

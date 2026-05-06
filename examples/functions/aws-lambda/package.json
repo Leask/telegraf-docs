@@ -12,7 +12,7 @@
 	},
 	"dependencies": {
 		"serverless-http": "^3.1.1",
-		"telegraf": "npm:@leask/telegraf@6.0.0"
+		"telegraf": "npm:@leask/telegraf@6.0.1"
 	},
 	"devDependencies": {
 		"@types/node": "^20.19.39",
