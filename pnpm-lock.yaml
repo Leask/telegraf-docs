@@ -24,8 +24,8 @@ dependencies:
     specifier: ^3.3.2
     version: 3.3.2
   telegraf:
-    specifier: git+https://github.com/Leask/telegraf.git#bot-api-9.6-sync
-    version: github.com/Leask/telegraf/07a9ef325efb1a53fb196de80ce8b817c1149b1e
+    specifier: npm:@leask/telegraf@6.0.0
+    version: /@leask/telegraf@6.0.0
 
 devDependencies:
   '@types/express':
@@ -63,6 +63,25 @@ packages:
     resolution: {integrity: sha512-aZAXGYo6m22Fk1zZzEUKBvut/CIIQe/BapEORnxiD5Qr0kPHqqI69NtEMCme74h+at72sPhbkb4ZrLd1W3KRLA==}
     dependencies:
       fast-json-stringify: 5.8.0
+    dev: false
+
+  /@leask/telegraf@6.0.0:
+    resolution: {integrity: sha512-3scLSWBf1rJsEvBNvpSI0JfVLZfHzEDEFu8L4g/oRt8XCTiasf/4Bgi0C32+JbOV8Akdk5oe/xufAFG+fviqtw==}
+    engines: {node: '>=20'}
+    hasBin: true
+    dependencies:
+      '@telegraf/types': /@leask/types@9.6.0
+      debug: 4.4.3
+      mri: 1.2.0
+      p-timeout: 7.0.1
+      safe-compare: 1.1.4
+      sandwich-stream: 2.0.2
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /@leask/types@9.6.0:
+    resolution: {integrity: sha512-rCIH++ksNWJZ4JZ3j3aQ49xRDjMJlCTz64bQY4YzVunGgsI+jSBitXv751f2bz5Kqf2xgHlGCu+LXLvposGpYw==}
     dev: false
 
   /@types/accepts@1.3.5:
@@ -1208,31 +1227,4 @@ packages:
 
   /zod@3.22.2:
     resolution: {integrity: sha512-wvWkphh5WQsJbVk1tbx1l1Ly4yg+XecD+Mq280uBGt9wa5BKSWf4Mhp6GmrkPixhMxmabYY7RbzlwVP32pbGCg==}
-    dev: false
-
-  github.com/Leask/telegraf/07a9ef325efb1a53fb196de80ce8b817c1149b1e:
-    resolution: {tarball: https://codeload.github.com/Leask/telegraf/tar.gz/07a9ef325efb1a53fb196de80ce8b817c1149b1e}
-    name: telegraf
-    version: 6.0.0
-    engines: {node: '>=20'}
-    hasBin: true
-    prepare: true
-    requiresBuild: true
-    dependencies:
-      '@telegraf/types': github.com/Leask/types/012947771d009d7ab1233dd96d95683d74471cf5
-      debug: 4.4.3
-      mri: 1.2.0
-      p-timeout: 7.0.1
-      safe-compare: 1.1.4
-      sandwich-stream: 2.0.2
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
-
-  github.com/Leask/types/012947771d009d7ab1233dd96d95683d74471cf5:
-    resolution: {tarball: https://codeload.github.com/Leask/types/tar.gz/012947771d009d7ab1233dd96d95683d74471cf5}
-    name: '@telegraf/types'
-    version: 9.6.0
-    prepare: true
-    requiresBuild: true
     dev: false

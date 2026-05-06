@@ -12,10 +12,7 @@
 	},
 	"dependencies": {
 		"serverless-http": "^3.1.1",
-		"telegraf": "git+https://github.com/Leask/telegraf.git#bot-api-9.6-sync"
-	},
-	"overrides": {
-		"@telegraf/types": "git+https://github.com/Leask/types.git#bot-api-9.6-sync"
+		"telegraf": "npm:@leask/telegraf@6.0.0"
 	},
 	"devDependencies": {
 		"@types/node": "^20.19.39",
