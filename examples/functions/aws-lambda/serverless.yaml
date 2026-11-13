@@ -1,6 +1,6 @@
 {
 	service: "aws",
-	frameworkVersion: "3",
+	frameworkVersion: "4.46.0",
 
 	useDotenv: true,
 
@@ -10,13 +10,9 @@
 
 	provider: {
 		name: "aws",
-		runtime: "nodejs16.x",
+		runtime: "nodejs22.x",
 	},
 
-	plugins: [
-		"serverless-plugin-typescript",
-		"serverless-dotenv-plugin"
-	],
 
 	functions: {
 		echo: {

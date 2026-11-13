@@ -3,10 +3,13 @@ import { HttpsProxyAgent } from "https-proxy-agent";
 
 const { HTTPS_PROXY_HOST, HTTPS_PROXY_PORT } = process.env;
 
-const agent = new HttpsProxyAgent({
-	host: HTTPS_PROXY_HOST,
-	port: HTTPS_PROXY_PORT,
-});
+if (!HTTPS_PROXY_HOST || !HTTPS_PROXY_PORT) {
+	throw new Error("HTTPS_PROXY_HOST and HTTPS_PROXY_PORT are required");
+}
+
+const agent = new HttpsProxyAgent(
+	`http://${HTTPS_PROXY_HOST}:${HTTPS_PROXY_PORT}`,
+);
 
 const bot = new Telegraf(token, { telegram: { agent } });
 

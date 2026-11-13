@@ -4,6 +4,14 @@ This template demonstrates how to run a simple Telegraf echo bot with on AWS Lam
 
 ## Usage
 
+This example uses Serverless Framework 4 and the Node.js 22 Lambda runtime.
+Framework 4 builds TypeScript and loads `.env` files without the old plugins.
+It requires a Serverless account or license key, as described in the
+[official upgrade guide](https://www.serverless.com/framework/docs/guides/upgrading-v4).
+Authenticate before deploying; an AWS deployment is not part of the local
+type-check or security audit. The framework version is pinned in both the
+manifest and configuration to avoid implicit framework upgrades.
+
 After installing dependencies (using `npm install` or the similar), the following commands are available:
 
 ```shell

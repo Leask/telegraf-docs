@@ -1,6 +1,7 @@
 import { Telegraf } from "telegraf";
+import type { Update } from "telegraf/types";
 import Koa from "koa";
-import koaBody from "koa-body";
+import { bodyParser } from "@koa/bodyparser";
 
 const bot = new Telegraf(token);
 const app = new Koa();
@@ -13,10 +14,22 @@ bot.command("image", ctx =>
 );
 bot.on("text", ctx => ctx.reply("Hello"));
 
-app.use(koaBody());
+// Telegram sends JSON updates, not multipart form uploads.
+app.use(bodyParser({ enableTypes: ["json"], patchNode: true }));
 
-app.use(async (ctx, next) =>
-	(await bot.createWebhook({ domain: webhookDomain }))(ctx.req, ctx.res, next),
-);
+const webhook = await bot.createWebhook({ domain: webhookDomain });
+
+app.use(async (ctx, next) => {
+	if (ctx.method !== "POST" || ctx.path !== `/telegraf/${bot.secretPathComponent()}`) {
+		return next();
+	}
+	// Telegraf writes the raw response; do not let Koa replace it with a 404.
+	ctx.status = 200;
+	ctx.respond = false;
+	await webhook(
+		Object.assign(ctx.req, { body: ctx.request.body as Update }),
+		ctx.res,
+	);
+});
 
 app.listen(port, () => console.log("Listening on port", port));
